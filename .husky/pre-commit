@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+# Get current hour
+HOUR=$(date +"%H")
+
+# Time-based greeting
+if [ "$HOUR" -lt 6 ]; then
+  echo "🌙 It's the deep hours of the night... only the bold commit now."
+elif [ "$HOUR" -lt 12 ]; then
+  echo "☀️ Morning commit detected. Fresh brain, clean code."
+elif [ "$HOUR" -lt 18 ]; then
+  echo "🌤️ Afternoon grind. Let’s make this one count."
+else
+  echo "🌆 Evening commit. One last push before glory."
+fi
+
+echo ""
+echo "🚀✨ Starting test-commit sequence..."
+echo "🔍 Scanning files for test-commit..."
+echo "────────────────────────────────────"
+
+npm.cmd run test-commit
+EXIT_CODE=$?
+
+echo "────────────────────────────────────"
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo "❌ TEST-COMMIT FAILED"
+  echo "🛑 Your code has been judged unworthy. The commit has been blocked."
+  echo "💡 Fix the issues, run the tests again, and return stronger."
+  echo ""
+  exit 1
+fi
+
+echo "✅ All checks passed!"
+echo "🎉 Your code is clean. The commit may proceed."
+echo "🛡️ Secured."
+echo "📦 Committing now..."
+echo ""
