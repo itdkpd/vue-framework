@@ -1,0 +1,12 @@
+@mixin icon($name, $folder: 'icons') {
+  &::after {
+    background-image: url('@/assets/images/#{$folder}/#{$name}.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    content: '';
+    display: inline-block;
+  }
+}

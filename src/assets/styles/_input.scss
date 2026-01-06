@@ -1,0 +1,46 @@
+@use 'colors' as *;
+
+.form-control {
+  border: 1px solid $blue;
+  width: 100%;
+  border-radius: 0.1875rem;
+  margin: 1px 0;
+  transition:
+    border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
+  flex: 1;
+  outline: none;
+  padding: 0.3125rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  &.form-control-error {
+    border: 1px solid $error;
+  }
+}
+
+.form-control[disabled] {
+  cursor: not-allowed;
+  border-color: var(--gray);
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 1px $blue;
+  border: 1px solid $blue;
+  border-radius: 0;
+  outline: $blue;
+
+  &.form-control-error {
+    box-shadow: 0 0 0 1px $error;
+    border: 1px solid $error;
+  }
+}
+
+span.form-control-error {
+  color: $error;
+  display: block;
+
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}

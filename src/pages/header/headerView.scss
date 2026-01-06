@@ -1,0 +1,87 @@
+.header-container {
+  background-color: var(--primary-color);
+  box-shadow: 0.0625rem 0.0625rem 0.25rem rgb(0 0 0 / 10%);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .logo {
+    display: flex;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .menu-btn {
+    display: flex;
+
+    button {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: var(--white);
+    }
+  }
+
+  .header-menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: var(--primary-color);
+    padding: 0;
+    z-index: 3;
+
+    &.open {
+      max-height: 16rem;
+      height: 31.25rem;
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        display: block;
+        padding: 1rem;
+        text-decoration: none;
+        color: var(--white);
+
+        &:hover {
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
+
+  @media (width >= 48em) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+
+    .logo {
+      margin-bottom: 0;
+    }
+
+    button {
+      display: none;
+    }
+
+    .header-menu {
+      max-height: none;
+      display: flex;
+      width: auto;
+
+      li a {
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@use 'sass:color';
+
+$primary-color: #0d1117;
+$secondary-color: color.mix(#0d1117, #fff, 95%);
+$main-container-bg: color.mix(#0d1117, #fff, 98%);
+$green: #238636;
+$light-green: #2ea043;
+$blue: #0078d4;
+$white: #f5f5f5;
+$error: #dc3545;
+$gray: #c4c4c4;
+$scrollbar-bg: #c4c4c4;
+$scrollbar-bg-hover: #888;
+
+:root {
+  // --primary-color: #ffffff;
+  // --secondary-color: #f0f0f0;
+  // --main-container-bg: #{$main-container-bg};
+  // --color-text: #{$secondary-color};
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --main-container-bg: #{$main-container-bg};
+  --color-text: #{$white};
+  --green: #{$green};
+  --light-green: #{$light-green};
+  --blue: #{$blue};
+  --white: #{$white};
+  --error: #{$error};
+  --gray: #{$gray};
+}
+
+.dark-mode {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --main-container-bg: #{$main-container-bg};
+  --color-text: #{$white};
+  --green: #{$green};
+  --light-green: #{$light-green};
+  --blue: #{$blue};
+  --white: #{$white};
+  --error: #{$error};
+  --gray: #{$gray};
+}
+
+.dark-mode-blue {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$blue};
+  --main-container-bg: #{$main-container-bg};
+  --color-text: #{$white};
+  --green: #{$green};
+  --light-green: #{$light-green};
+  --blue: #{$blue};
+  --white: #{$white};
+  --error: #{$error};
+  --gray: #{$gray};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #{$primary-color};
+    --secondary-color: #{$secondary-color};
+    --color-text: #{$white};
+  }
+}
