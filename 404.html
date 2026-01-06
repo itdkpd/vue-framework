@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/vue-framework/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A modern Vue app with a sleek loading animation and fast performance."
+    />
+    <title>Vite App</title>
+
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+        background-color: #0d1117; /* background */
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        position: relative;
+        font-weight: normal;
+      }
+      body {
+        background-color: #0d1117; /* background */
+        margin: 0;
+        height: 100%;
+
+        overflow: auto;
+        width: 100%;
+
+        color: var(--color-text);
+        background: var(--primary-color);
+        transition:
+          color 0.5s,
+          background-color 0.5s;
+        line-height: 1.6;
+        font-family:
+          Inter,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          'Fira Sans',
+          'Droid Sans',
+          'Helvetica Neue',
+          sans-serif;
+        font-family: Calibri, 'Open Sans', Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+        font-size: 0.9375rem;
+        text-rendering: optimizelegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      @keyframes dotFlashing {
+        0% {
+          background-color: #ffffff; /* dot-color-start */
+        }
+        100% {
+          background-color: #161b22; /* dot-color-end */
+        }
+      }
+
+      #initial-loading {
+        height: 100%;
+        inset: 0;
+        background-color: #0d1117; /* background */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #initial-loading h1 {
+        color: #ffffff; /* text-color */
+        text-align: center;
+      }
+
+      #initial-loading .loader-container {
+        padding: 25px 20px;
+        align-self: center;
+        margin: 0 auto;
+        width: 350px;
+        border-radius: 5px;
+      }
+
+      #initial-loading .dot-flashing {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+        column-gap: 10px;
+        justify-content: center;
+      }
+
+      #initial-loading .dot-flashing .dot-1,
+      #initial-loading .dot-flashing .dot-2,
+      #initial-loading .dot-flashing .dot-3,
+      #initial-loading .dot-flashing .dot-4 {
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        animation: dotFlashing 0.5s infinite alternate;
+      }
+
+      #initial-loading .dot-flashing .dot-1 {
+        animation-delay: 0.1s;
+      }
+
+      #initial-loading .dot-flashing .dot-2 {
+        animation-delay: 0.2s;
+      }
+
+      #initial-loading .dot-flashing .dot-3 {
+        animation-delay: 0.3s;
+      }
+
+      #initial-loading .dot-flashing .dot-4 {
+        animation-delay: 0.4s;
+      }
+    </style>
+    <script type="module" crossorigin src="/vue-framework/assets/index-B_8xCLTI.js"></script>
+    <link rel="stylesheet" crossorigin href="/vue-framework/assets/index-DHlK_WoA.css">
+  </head>
+  <body class="dark-mode-blue">
+    <div id="app"></div>
+    <div id="initial-loading">
+      <div class="loader-container">
+        <h1>Loading</h1>
+        <div class="dot-flashing">
+          <div class="dot-1"></div>
+          <div class="dot-2"></div>
+          <div class="dot-3"></div>
+          <div class="dot-4"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
