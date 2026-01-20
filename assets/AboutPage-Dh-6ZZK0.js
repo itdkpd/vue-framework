@@ -1,0 +1,1 @@
+import{p as e,s as t,t as n}from"./index-QuTD2h13.js";var r={},i={class:`about`};function a(n,r){return e(),t(`div`,i)}var o=n(r,[[`render`,a]]);export{o as default};

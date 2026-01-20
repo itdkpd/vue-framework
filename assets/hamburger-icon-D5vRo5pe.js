@@ -1,1 +1,0 @@
-import{c as e,g as t,u as n}from"./index-B_8xCLTI.js";var r={xmlns:`http://www.w3.org/2000/svg`,width:`24`,height:`24`,fill:`none`,stroke:`currentColor`,"stroke-linecap":`round`,"stroke-linejoin":`round`,"stroke-width":`2`};function i(i,a){return t(),n(`svg`,r,[...a[0]||=[e(`path`,{d:`M3 6h18M3 12h18M3 18h18`},null,-1)]])}var a={render:i};export{a as default,i as render};
