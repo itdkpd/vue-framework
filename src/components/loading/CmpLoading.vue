@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    <div class="loaderContainer">
+    <div class="loader-container">
       <h1>Loading</h1>
       <div class="dot-flashing">
         <div class="dot-1"></div>
@@ -43,7 +43,7 @@ $dot-color-end: var(--primary-color);
   }
 }
 
-.loaderContainer {
+.loader-container {
   padding: 1.5625rem 1.25rem;
   align-self: center;
   margin: 0 auto;

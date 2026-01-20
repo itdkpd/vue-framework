@@ -9,7 +9,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/pages/MainPage.vue'),
+      component: () => import('@/pages/clientPages/ClientMainPage.vue'),
       children: [
         {
           path: 'about',

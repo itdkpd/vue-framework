@@ -23,7 +23,7 @@
     "lint": "run-p lint:*",
     "prod-lint": "run-p lint:*",
     "test-commit": "run-p type-check lint",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "vite build && copy dist\\index.html dist\\404.html && gh-pages -d dist"
   },
   "dependencies": {
     "nprogress": "^0.2.0",
