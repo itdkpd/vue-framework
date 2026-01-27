@@ -95,7 +95,6 @@ const handleButtonClick = (action: ButtonAction, index: number): void => {
 
 /* Container */
 .action-card {
-  background: linear-gradient(180deg, rgb(0 0 0 / 45%), rgb(0 0 0 / 60%));
   padding: 1.25rem;
   border-radius: calc(var(--radius) * 1);
   color: var(--action-text-color);
