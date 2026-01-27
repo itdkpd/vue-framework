@@ -17,15 +17,3 @@ import Artist from '@/pages/clientPages/artists/artistView.vue'
     <Footer />
   </div>
 </template>
-<style scoped lang="scss">
-.main-container1 {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-
-.main1 {
-  flex: 1;
-  padding-top: 96px; 
-}
-</style>

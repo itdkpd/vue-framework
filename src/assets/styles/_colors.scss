@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-$primary-color: #000503;
+$primary-color: #0d1117;
 $secondary-color: color.mix(#0d1117, #fff, 95%);
 $main-container-bg: color.mix(#0d1117, #fff, 98%);
 $green: #238636;
@@ -9,8 +9,18 @@ $blue: #0078d4;
 $white: #f5f5f5;
 $error: #dc3545;
 $gray: #c4c4c4;
+$light-gray: #ccc;
 $scrollbar-bg: #c4c4c4;
 $scrollbar-bg-hover: #888;
+$header-bg-color: #000503;
+$footer-bg-color: #000503;
+$border-color: #444;
+$footer-copyright-text: #888;
+$artist-bg-color: #000;
+$artist-image-border: #4444445d;
+$book-bg-color: #bda660;
+$book-text-color: #1a1a1a;
+$artist-bio-text: #e9e8e8;
 
 :root {
   // --primary-color: #ffffff;
@@ -27,6 +37,14 @@ $scrollbar-bg-hover: #888;
   --white: #{$white};
   --error: #{$error};
   --gray: #{$gray};
+  --footer-bg-color: #{$footer-bg-color};
+  --footer-copyright-text: #{$footer-copyright-text};
+  --border-color: #{border-color};
+  --artist-bg-color: #{$artist-bg-color};
+  --artist-image-border: #{$artist-image-border};
+  --book-bg-color: #{$book-bg-color};
+  --artist-bio-text: #{$artist-bio-text};
+  --book-text-color: #{$book-text-color};
 }
 
 .dark-mode {

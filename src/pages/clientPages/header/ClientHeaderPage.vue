@@ -21,7 +21,6 @@ onUnmounted(() => {
 })
 </script>
 
-
 <template>
   <header :class="['site-header', { scrolled }]">
     <nav class="nav-container">
@@ -47,7 +46,9 @@ onUnmounted(() => {
           <RouterLink to="/about" @click="menuOpen = false">Book</RouterLink>
         </li>
         <li>
-          <RouterLink to="/contact" @click="menuOpen = false">Tattoo After Care Products</RouterLink>
+          <RouterLink to="/contact" @click="menuOpen = false"
+            >Tattoo After Care Products</RouterLink
+          >
         </li>
         <li>
           <RouterLink to="/contact" @click="menuOpen = false">More</RouterLink>
@@ -56,7 +57,6 @@ onUnmounted(() => {
     </nav>
   </header>
 </template>
-
 
 <style scoped lang="scss">
 .site-header {
@@ -84,7 +84,6 @@ onUnmounted(() => {
     height: auto;
     transition: all 0.4s ease;
   }
-
 
   .hamburger {
     display: none;
@@ -134,8 +133,8 @@ onUnmounted(() => {
 .site-header.scrolled {
   background: rgb(0 0 0 / 85%);
   padding: 0.8rem 0;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 10px rgb(0 0 0 / 40%);
+  backdrop-filter: blur(0.375rem);
+  box-shadow: 0 0.125rem 0.625rem rgb(0 0 0 / 40%);
 
   .logo-img {
     max-width: 15.375rem;
@@ -144,7 +143,7 @@ onUnmounted(() => {
 }
 
 /* 📱 Mobile & Tablet */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .site-header {
     .hamburger {
       display: flex;
@@ -160,7 +159,6 @@ onUnmounted(() => {
     flex-direction: column;
     background: rgb(0 0 0 / 95%);
     padding-top: 6rem;
-
     transform: translateX(-100%);
     transition: transform 0.4s ease;
     z-index: 1001;
@@ -176,19 +174,19 @@ onUnmounted(() => {
   }
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .logo-img {
     max-width: 18rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .logo-img {
     max-width: 14rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .logo-img {
     max-width: 11.5rem;
   }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Header from '@/pages/header/headerView.vue'
 import SideMenu from '@/pages/sideMenu.vue'
-import FooterView from './footer/footerView.vue';
+import FooterView from '@/pages/footer/footerView.vue'
 
 // Computed
 // const userDetails = computed(() => store.userDetails)
