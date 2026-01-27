@@ -2,18 +2,25 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const scrolled = ref(false)
+const menuOpen = ref(false)
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50
 }
 
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 </script>
+
 
 <template>
   <header :class="['site-header', { scrolled }]">
@@ -24,15 +31,32 @@ onUnmounted(() => {
         </RouterLink>
       </div>
 
-      <ul class="nav-links">
-        <li><RouterLink to="/">Home</RouterLink></li>
-        <li><RouterLink to="/about">Book</RouterLink></li>
-        <li><RouterLink to="/contact">Tattoo After Care Products</RouterLink></li>
-        <li><RouterLink to="/contact">More</RouterLink></li>
+      <!-- Hamburger -->
+      <button class="hamburger" @click="toggleMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation -->
+      <ul class="nav-links" :class="{ open: menuOpen }">
+        <li>
+          <RouterLink to="/" @click="menuOpen = false">Home</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/about" @click="menuOpen = false">Book</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/contact" @click="menuOpen = false">Tattoo After Care Products</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/contact" @click="menuOpen = false">More</RouterLink>
+        </li>
       </ul>
     </nav>
   </header>
 </template>
+
 
 <style scoped lang="scss">
 .site-header {
@@ -43,58 +67,57 @@ onUnmounted(() => {
   top: 0;
   width: 100%;
   z-index: 1000;
-
-  /* Smooth transitions */
-  transition:
-    background 0.4s ease,
-    margin 0.4s ease,
-    padding 0.4s ease,
-    box-shadow 0.4s ease,
-    height 0.4s ease,
-    width 0.4s ease,
-    backdrop-filter 0.4s ease;
+  transition: all 0.4s ease;
 
   .nav-container {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 75rem;
     margin: 0 auto;
+    padding: 0 1rem;
   }
 
   .logo-img {
-    transition:
-      height 0.4s ease,
-      width 0.4s ease;
-    width: 22.25rem;
-    height: 4rem;
+    width: 100%;
+    max-width: 22.25rem;
+    height: auto;
+    transition: all 0.4s ease;
+  }
+
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+      width: 1.5rem;
+      height: 0.15rem;
+      background: var(--white);
+      display: block;
+    }
   }
 
   .nav-links {
     display: flex;
     gap: 2rem;
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
 
     a {
       color: var(--white);
       text-decoration: none;
       position: relative;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: var(--white);
-      }
 
       &::after {
         content: '';
         position: absolute;
         left: 0;
         bottom: -0.25rem;
-        width: 0%;
+        width: 0;
         height: 0.125rem;
         background: var(--white);
         transition: width 0.3s ease;
@@ -107,16 +130,67 @@ onUnmounted(() => {
   }
 }
 
-/* Smooth scroll state */
+/* Scroll effect */
 .site-header.scrolled {
   background: rgb(0 0 0 / 85%);
-  padding: 0.8rem 2rem;
-  backdrop-filter: blur(0.375rem);
-  box-shadow: 0 0.125rem 0.625rem rgb(0 0 0 / 40%);
+  padding: 0.8rem 0;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 40%);
 
   .logo-img {
-    width: 15.375rem;
-    height: 2.75rem;
+    max-width: 15.375rem;
+    height: auto;
+  }
+}
+
+/* 📱 Mobile & Tablet */
+@media (max-width: 768px) {
+  .site-header {
+    .hamburger {
+      display: flex;
+    }
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 18rem;
+    flex-direction: column;
+    background: rgb(0 0 0 / 95%);
+    padding-top: 6rem;
+
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1001;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    li {
+      padding: 1rem 1.5rem;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .logo-img {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    max-width: 14rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    max-width: 11.5rem;
   }
 }
 </style>
