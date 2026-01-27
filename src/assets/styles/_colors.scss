@@ -19,8 +19,12 @@ $footer-copyright-text: #888;
 $artist-bg-color: #000;
 $artist-image-border: #4444445d;
 $book-bg-color: #bda660;
+$book-bg-hover: #cd931d;
 $book-text-color: #1a1a1a;
 $artist-bio-text: #e9e8e8;
+$action-text-color: #f2ede3;
+$action-description-color: #e9e8e8;
+$action-border-color: #ececec5d;
 
 :root {
   // --primary-color: #ffffff;
@@ -43,8 +47,12 @@ $artist-bio-text: #e9e8e8;
   --artist-bg-color: #{$artist-bg-color};
   --artist-image-border: #{$artist-image-border};
   --book-bg-color: #{$book-bg-color};
+  --book-bg-hover: #{$book-bg-hover};
   --artist-bio-text: #{$artist-bio-text};
   --book-text-color: #{$book-text-color};
+  --action-text-color: #{$action-text-color};
+  --action-description-color: #{$action-description-color};
+  --action-border-color: #{$action-border-color};
 }
 
 .dark-mode {
