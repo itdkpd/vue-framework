@@ -1,1 +1,0 @@
-import{_ as e,c as t,t as n}from"./index-xbiLbvy8.js";var r={},i={class:`about`};function a(n,r){return e(),t(`div`,i)}var o=n(r,[[`render`,a]]);export{o as default};
